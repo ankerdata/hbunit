@@ -13,7 +13,7 @@
 
 #include "hbunit.ch"
 
-USER FUNCTION hbunit_test()
+INIT FUNCTION hbunit_test()
 
   LOCAL oRunner := TTextRunner():new()
   LOCAL oSuite := TTestSuite():new()
