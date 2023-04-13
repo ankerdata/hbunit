@@ -14,8 +14,6 @@
 #ifndef _HBUNIT_CH
 #define _HBUNIT_CH
 
-#define _HBUNIT_VERSION 0.0.5-alpha
-
 #include "hbclass.ch"
 
 #define CRLF ( CHR(13) + CHR(10) )
