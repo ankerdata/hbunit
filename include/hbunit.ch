@@ -16,31 +16,20 @@
 
 #define _HBUNIT_VERSION 0.0.5-alpha
 
-#ifdef __HARBOUR__
-  #include "hbclass.ch"
-  
-  #define CRLF ( CHR(13) + CHR(10) )
+#include "hbclass.ch"
 
-  #XTRANSLATE _Super          => ::super
-  #XTRANSLATE USER FUNCTION   => FUNCTION
-  #XTRANSLATE TRY             => TRYEXCEPTION
-  #XTRANSLATE TRY EXCEPTION   => TRYEXCEPTION
-  #XTRANSLATE CATCH           => CATCHEXCEPTION
-  #XTRANSLATE CATCH EXCEPTION => CATCHEXCEPTION
+#define CRLF ( CHR(13) + CHR(10) )
 
-  #xcommand TRYEXCEPTION       => bError := errorBlock( {|oErr| break( oErr ) } ) ;;
-                                  BEGIN SEQUENCE
-  #xcommand CATCHEXCEPTION [<!oErr!>]  => errorBlock( bError ) ;;
-                                          RECOVER [USING <oErr>] <-oErr-> ;;
-                                          errorBlock( bError )
+#XTRANSLATE USER FUNCTION   => FUNCTION
+#XTRANSLATE TRY             => TRYEXCEPTION
+#XTRANSLATE TRY EXCEPTION   => TRYEXCEPTION
+#XTRANSLATE CATCH           => CATCHEXCEPTION
+#XTRANSLATE CATCH EXCEPTION => CATCHEXCEPTION
 
-#else
-  #include "hbunit_totvs_compat.ch"
-  #ifdef TOTVS
-    #include "totvs.ch"
-  #else
-    #include "protheus.ch"
-  #endif
-#endif
+#xcommand TRYEXCEPTION       => bError := errorBlock( {|oErr| break( oErr ) } ) ;;
+                                BEGIN SEQUENCE
+#xcommand CATCHEXCEPTION [<!oErr!>]  => errorBlock( bError ) ;;
+                                        RECOVER [USING <oErr>] <-oErr-> ;;
+                                        errorBlock( bError )
 
 #endif // _HBUNIT_CH

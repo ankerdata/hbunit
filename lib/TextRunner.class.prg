@@ -22,7 +22,7 @@ CLASS TTextRunner FROM TTestRunner
 ENDCLASS
 
 METHOD new() CLASS TTextRunner
-  _Super:new()
+  ::super:new()
   ::cClassName := "TTextRunner"
   RETURN ( SELF )
 

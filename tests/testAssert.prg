@@ -29,7 +29,7 @@ CLASS TTestAssert FROM TTestCase
 ENDCLASS
 
 METHOD new() CLASS TTestAssert
-  _Super:new()
+  ::super:new()
   ::cClassName := "TTestAssert"
   RETURN( SELF )
 

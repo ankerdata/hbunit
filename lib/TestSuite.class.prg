@@ -27,7 +27,7 @@ CLASS TTestSuite FROM TTest
 ENDCLASS
 
 METHOD new() CLASS TTestSuite
-  _Super:new()
+  ::super:new()
   ::cClassName := "TTestSuite"
   ::aTests := {}
   RETURN ( SELF )

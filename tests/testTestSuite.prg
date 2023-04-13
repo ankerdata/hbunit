@@ -20,7 +20,7 @@ CLASS TTestTestSuite FROM TTestCase
 ENDCLASS
 
 METHOD new() CLASS TTestTestSuite
-  _Super:new()
+  ::super:new()
   RETURN ( SELF )
 
 METHOD testAddTest() CLASS TTestTestSuite

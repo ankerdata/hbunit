@@ -28,7 +28,7 @@ CLASS TTestCase FROM TTest
 ENDCLASS
 
 METHOD new() CLASS TTestCase
-	_Super:new()
+	::super:new()
   ::cClassName := "TTestCase"
 	RETURN ( SELF )
 
