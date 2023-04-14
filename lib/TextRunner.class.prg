@@ -52,7 +52,7 @@ METHOD showResults( oResult ) CLASS TTextRunner
 
       FOR i := 1 to nErrors
         oError := aErrors[i]
-        ? PADL( i, 4 ), oError:description, oError:operation, IF( !( Empty( oError:args )), ::toStr( oError:args ), "" )
+        ? PADL( i, 4 ), oError:description, oError:operation, IF( !( oError:args == nil ), ::toStr( oError:args ), "" )
       NEXT
     ENDIF
 
@@ -61,7 +61,7 @@ METHOD showResults( oResult ) CLASS TTextRunner
 
       FOR i := 1 to nFailures
         oFailure := aFailures[i]
-        ? PADL( i, 4 ), oFailure:description, oFailure:operation, IF( !( Empty( oFailure:args )), ::toStr( oFailure:args ), "" )
+        ? PADL( i, 4 ), oFailure:description, oFailure:operation, IF( !( oError:args == nil ), ::toStr( oFailure:args ), "" )
       NEXT
     ENDIF
   ENDIF
