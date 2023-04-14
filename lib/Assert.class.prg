@@ -142,7 +142,7 @@ RETURN ( lResult )
 // #TODO - see where to put these util methods
 
 METHOD toStr (xVal, lUseQuote ) CLASS TAssert
-  local cStr, i
+  local cStr
 
   if( lUseQuote == nil, lUseQuote := .f., )
 
