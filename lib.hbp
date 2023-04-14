@@ -1,6 +1,8 @@
 -incpath=include
 -hblib
 -ohbunit
+-w3
+-es2
 lib\TextRunner.class.prg
 lib\Assert.class.prg
 lib\Test.class.prg
