@@ -72,7 +72,7 @@ METHOD invokeTestMethod( oTest, cMethod ) CLASS TTestResult
 
   CATCH EXCEPTION oError
     oError:Args := oTest:ClassName() + ":" + cMethod
-    ::addError( oError )
+    ::oData:addError( oError )
   END TRY
 
   RETURN ( NIL )
