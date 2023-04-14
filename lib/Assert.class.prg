@@ -102,7 +102,7 @@ METHOD notNull( xAct, cMsg ) CLASS TAssert
   RETURN ( ::assert( nil, xAct , cErrMsg, .t. ) )
 
 METHOD assert( xExp, xAct, cMsg, lInvert ) CLASS TAssert
-  LOCAL oError
+  LOCAL oError, bError
 
   cMsg := Procfile(2) + ":" + LTRIM(STR(ProcLine(2))) + ":" + ProcName(2) + " => " + cMsg
 

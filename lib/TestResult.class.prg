@@ -18,13 +18,13 @@ CLASS TTestResult
   METHOD ClassName()
   DATA cClassName
 
-  METHOD run()
+  METHOD run( oTest )
 
   DATA oData
 
 HIDDEN:
-    METHOD invokeTestMethod()
-    METHOD getTestMethods()
+    METHOD invokeTestMethod( oTest, cMethod )
+    METHOD getTestMethods( oTest )
 
 ENDCLASS
 
@@ -65,7 +65,7 @@ METHOD getTestMethods( oTest ) CLASS TTestResult
   RETURN ( aTestMethods )
 
 METHOD invokeTestMethod( oTest, cMethod ) CLASS TTestResult
-  LOCAL oError
+  LOCAL oError, bError
 
   TRY EXCEPTION
     __ObjSendMsg( oTest, cMethod )
