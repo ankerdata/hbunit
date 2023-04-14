@@ -174,9 +174,7 @@ METHOD toStr (xVal, lUseQuote ) CLASS TAssert
   RETURN ( cStr )
 
 METHOD arrToStr( aArr ) CLASS TAssert
-  LOCAL cStr := "", nArrLen := 0, i
-
-  nArrLen = LEN( aArr )
+  LOCAL cStr := "", nArrLen := LEN( aArr ), i
 
   cStr += " ARRAY => { "
   FOR i := 1 TO nArrLen
